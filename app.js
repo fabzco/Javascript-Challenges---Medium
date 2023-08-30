@@ -58,12 +58,16 @@ console.log(progressiveSum(10));
 
 //Given a number in seconds, return this number in mm:ss format
 
-function calcTime(seconds) {
+function calcTime (seconds) {
   let timerMinutes = Math.floor(seconds / 60);
   let timerSeconds = seconds % 60;
 
   if (timerMinutes.toString().length === 1) {
-    timerMinutes = "0" + timerMinutes;
+    timerMinutes = '0' + timerMinutes
+  }
+
+  if (timerSeconds.toString().length === 1) {
+    timerSeconds = timerSeconds + '0'
   }
 
   return timerMinutes + ":" + timerSeconds;
@@ -71,14 +75,15 @@ function calcTime(seconds) {
 
 console.log(calcTime(600));
 console.log(calcTime(300));
+console.log(calcTime(90030));
 
 //Find the largest number
 
 function getMax(arr) {
-  let max = arr[0];
-  for (let i = 1; i < arr.length; ++i) {
-    if (arr[i] > max) {
-      let max = arr[i];
+  max = arr[0]
+  for (i = 1; i < arr.length; ++i) {
+    if (arr[i] > max){
+      max = arr[i]
     }
   }
   return max;
@@ -91,11 +96,36 @@ console.log(getMax([-100, -200, -500]));
 //Given a string, return the reversed string
 
 function reverseString (str) {
-    let reversedString = '';
-    let (i = 0; i < str.length; ++i) {
- reversedString = str[i] + reverseString;
-    }
-    return reverseString;
+ let reversedString = '';
+
+  for (let i = 0; i < str.length; ++i) {
+   reversedString = str[i] + reversedString;
+  }
+  return reversedString
+
 }
 
 console.log(reverseString('abc'));
+console.log(reverseString('This is cool'));
+
+//Turn every element in an array into 0
+
+/*function convertToZeros (arra) {
+let newArr = [];
+
+for (let i = 0; i < arra.length; ++i) {
+   newArr[i] = 0
+  }
+return newArr;
+}
+*/
+
+//Using fill method
+ function convertToZeros (arra) {
+  return new Array(arra.length).fill(0) 
+ }
+
+
+
+console.log(convertToZeros([5, 100, 1]))
+console.log(convertToZeros([1, 2, 3, 4, 5, 6]))
