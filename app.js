@@ -79,11 +79,11 @@ console.log(calcTime(90030));
 
 //Find the largest number
 
-function getMax(arr) {
-  max = arr[0]
-  for (i = 1; i < arr.length; ++i) {
-    if (arr[i] > max){
-      max = arr[i]
+function getMax(arr1) {
+  max = arr1[0]
+  for (i = 1; i < arr1.length; ++i) {
+    if (arr1[i] > max){
+      max = arr1[i]
     }
   }
   return max;
@@ -121,11 +121,33 @@ return newArr;
 */
 
 //Using fill method
- function convertToZeros (arra) {
+
+/* function convertToZeros (arra) {
   return new Array(arra.length).fill(0) 
  }
+*/
 
+//Using map method
 
-
+function convertToZeros (arra) {
+  return arra.map(elem => 0);
+}
 console.log(convertToZeros([5, 100, 1]))
 console.log(convertToZeros([1, 2, 3, 4, 5, 6]))
+
+//Filter out all the apples
+
+function removeApples (arr) {
+  let newArr = []
+
+  for (let i = 0; i < arr.length; ++i) {
+    if (arr[i] !== 'Apple') {
+      newArr.push(arr[i]);
+    }
+
+  }
+return newArr
+}
+
+console.log(removeApples(['Banana', 'Orange', 'Apple']));
+
