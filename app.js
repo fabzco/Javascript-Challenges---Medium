@@ -161,24 +161,28 @@ function removeApples(arr) {
 
 console.log(removeApples(['Banana', 'Orange', 'Apple']));
 
-//Filter out all the falsy values
+//Filter out all the falsy values/for loop
+
 function filterOutFalsyy (arr2) {  
- return arr2.filter(elem => !!elem === true)
-}
-
-/*
-let trueArray = []
-
-for (let i = 0; i < arr1.length; ++i) {
-  if (arr1[i] === !false) {
-    trueArray.push(arr1[i]);
+  let trueArray = []
+ for (let i = 0; i < arr2.length; ++i) {
+   if (!!arr2[i] === true) {
+     trueArray.push(arr2[i]);
+    }
   }
   return trueArray;
 }
-}
-*/
+
+//filter method return arr2.filter(elem => !!elem === true)
 
 console.log(filterOutFalsyy(['Tomato', 'Orange', 'Banana', false]));
+console.log(filterOutFalsyy([500, null, 'Banana', false]));
 
 
+//Return same array of elements into its boolean value
 
+function convertToBoolean (arr3) {
+return arr3.map(elem => !!elem)
+}
+
+console.log(convertToBoolean([500, 0, "Fabz","",[]]));
