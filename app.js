@@ -1,5 +1,5 @@
 // Given two values, return the first one if it is falsy, otherwise return the second one
-
+ 
 function filterOutFalsy(value1, value2) {
   return !value1 ? value1 : value2;
 }
@@ -11,7 +11,7 @@ console.log(filterOutFalsy(true, "Dog"));
 //Return length of any given array
 
 /*function arrLength (arr) {
-    return arr.length;
+  return arr.length;
 }
 
 console.log(arrLength([1, 2, 3, 4]))
@@ -61,7 +61,7 @@ console.log(progressiveSum(10));
 function calcTime (seconds) {
   let timerMinutes = Math.floor(seconds / 60);
   let timerSeconds = seconds % 60;
-
+  
   if (timerMinutes.toString().length === 1) {
     timerMinutes = '0' + timerMinutes
   }
@@ -69,7 +69,7 @@ function calcTime (seconds) {
   if (timerSeconds.toString().length === 1) {
     timerSeconds = timerSeconds + '0'
   }
-
+  
   return timerMinutes + ":" + timerSeconds;
 }
 
@@ -135,19 +135,50 @@ function convertToZeros (arra) {
 console.log(convertToZeros([5, 100, 1]))
 console.log(convertToZeros([1, 2, 3, 4, 5, 6]))
 
-//Filter out all the apples
+//Filter out all the apples, for loop method
 
+/*
 function removeApples (arr) {
-  let newArr = []
 
-  for (let i = 0; i < arr.length; ++i) {
-    if (arr[i] !== 'Apple') {
-      newArr.push(arr[i]);
-    }
-
+  let noApples = []
+  
+  for (let i = 0; i <arr.length; ++i) {
+  if (arr[i] !== 'Apple') {
+    noApples.push(arr[i]);
   }
-return newArr
 }
 
+  return noApples;
+}
+*/
+
+//Using filter method
+
+function removeApples(arr) {
+  return arr.filter(elem => elem !== 'Apple')
+}
+
+
 console.log(removeApples(['Banana', 'Orange', 'Apple']));
+
+//Filter out all the falsy values
+function filterOutFalsyy (arr2) {  
+ return arr2.filter(elem => !!elem === true)
+}
+
+/*
+let trueArray = []
+
+for (let i = 0; i < arr1.length; ++i) {
+  if (arr1[i] === !false) {
+    trueArray.push(arr1[i]);
+  }
+  return trueArray;
+}
+}
+*/
+
+console.log(filterOutFalsyy(['Tomato', 'Orange', 'Banana', false]));
+
+
 
